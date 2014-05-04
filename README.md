@@ -1,3 +1,5 @@
+<img src="https://www.codeship.io/projects/1691c230-b5c6-0131-545c-56dfd08b5fc1/status"></img>
+
 picasaWebAPIBridge
 ==================
 
