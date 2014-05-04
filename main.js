@@ -25,8 +25,13 @@ exports.addImage = function(req, res, next) {
     //console.log("upload: file", file);
 
     image.fileName = tmpFileName;
-    //console.log('tmpFileName:',  tmpFileName);
+    console.log('tmpFileName:',  tmpFileName);
     imageUpload.upload(tmpFileName, {albumId: albumId, userId: userId, token: token}, function(error, response, body) {
+
+        console.log('Return from Upload error', error);
+        //console.log('Return from Upload Response', response);
+        console.log('Return from Upload Body', body);
+
         if (body && (response.statusCode === 200 || response.statusCode === 201 || response.statusCode === 202)) {
             parseString(body, function (err, result) {
                 if (!err) {
@@ -44,8 +49,13 @@ exports.addImage = function(req, res, next) {
             });
         }
         else {
+            var statusCode = 0;
+            if (response) {
+                statusCode = response.statusCode;
+            }
+
             var error = {
-                statusCode: response.statusCode,
+                statusCode: statusCode,
                 message: body
             };
             // should return with error code

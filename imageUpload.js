@@ -1,17 +1,22 @@
 var fs = require('fs');
 var request = require('request');
 
-exports.upload = function(fileName, options,callback) {
+exports.upload = function(fileName, options, callback) {
+    console.log('Going to read file', fileName);
     fs.readFile(fileName,function(error,data) {
         if (error) {
+            console.log('Failed to read file', fileName);
             callback(error, null, null);
         }
         else {
-            console.log('Read file', data.length);
 
             var token = options.token;
             var userId = options.userId || 'default';
             var rootUrl = 'https://picasaweb.google.com/data/feed/api/user/'+userId+'/albumid/'+options.albumId+'';
+
+            console.log('Read file', data.length);
+            console.log('Send Image to Google', rootUrl);
+
             request({
                 method:'POST',
                 headers:{ 
