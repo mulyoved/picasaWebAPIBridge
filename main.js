@@ -9,9 +9,10 @@ exports.getImages = function(req, res, next) {
 exports.addImage = function(req, res, next) {
     var file = req.files.file,
         filePath = file.path,
-        lastIndex = filePath.lastIndexOf("/"),
-        tmpFileName = filePath.substr(lastIndex + 1),
         image = req.body;
+
+    var lastIndex = filePath.replace('\\', '/').lastIndexOf('/');
+    var tmpFileName = filePath.substr(lastIndex + 1);
 
     var albumId = req.body.albumId; //"5965097735673433505"
     var description = req.body.description;
@@ -21,12 +22,12 @@ exports.addImage = function(req, res, next) {
     //console.log("upload: tmpFileName", tmpFileName);
     //console.log("upload: image.fileName", image.fileName);
     //console.log("upload: image", image);
+    console.log("upload: tmpFileName", tmpFileName);
     console.log("upload: filePath", filePath);
     console.log("upload: file", file);
 
     image.fileName = tmpFileName;
-    console.log('tmpFileName:',  tmpFileName);
-    imageUpload.upload(tmpFileName, {albumId: albumId, userId: userId, token: token}, function(error, response, body) {
+    imageUpload.upload(filePath, {albumId: albumId, userId: userId, token: token}, function(error, response, body) {
 
         console.log('Return from Upload error', error);
         //console.log('Return from Upload Response', response);
