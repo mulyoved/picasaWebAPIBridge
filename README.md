@@ -11,3 +11,5 @@ To Test
 http://localhost:3000/testUpload.html
 
 Take Token from: [Google OAuth Playgound](https://developers.google.com/oauthplayground/)
+
+Now hosted on heroku: bloggerApplication@gmail.com
