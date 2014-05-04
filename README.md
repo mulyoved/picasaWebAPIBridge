@@ -12,6 +12,17 @@ http://localhost:3000/testUpload.html
 
 Take Token from: [Google OAuth Playgound](https://developers.google.com/oauthplayground/)
 
-Now hosted on heroku: bloggerApplication@gmail.com
-
 http://picasawebapibridge.herokuapp.com
+
+http://picasawebapibridge.herokuapp.com/testUpload.html
+
+Heroku Commands
+===============
+
+` "/D/Program Files (x86)/Heroku/bin/heroku" login`
+
+email: bloggerApplication@gmail.com
+
+` "/D/Program Files (x86)/Heroku/bin/heroku" apps`
+
+` "/D/Program Files (x86)/Heroku/bin/heroku" logs --app picasawebapibridge`
