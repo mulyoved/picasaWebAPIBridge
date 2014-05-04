@@ -6,10 +6,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "",
+    "express": "~4.1.1",
     "xml2js": "~0.4.2",
-    "request": "~2.34.0",
-    "body-parser": "~1.0.2",
     "method-override": "~1.0.0",
     "morgan": "~1.0.0",
     "multer": "0.0.5"
