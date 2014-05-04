@@ -21,8 +21,8 @@ exports.addImage = function(req, res, next) {
     //console.log("upload: tmpFileName", tmpFileName);
     //console.log("upload: image.fileName", image.fileName);
     //console.log("upload: image", image);
-    //console.log("upload: filePath", filePath);
-    //console.log("upload: file", file);
+    console.log("upload: filePath", filePath);
+    console.log("upload: file", file);
 
     image.fileName = tmpFileName;
     console.log('tmpFileName:',  tmpFileName);
