@@ -2,19 +2,6 @@ var fs = require('fs');
 var imageUpload = require('./imageUpload');
 var parseString = require('xml2js').parseString;
 
-// Create the "uploads" folder if it doesn't exist
-fs.exists(__dirname + '/uploads', function (exists) {
-    if (!exists) {
-        console.log('Creating directory ' + __dirname + '/uploads');
-        fs.mkdir(__dirname + '/uploads', function (err) {
-            if (err) {
-                console.log('Error creating ' + __dirname + '/uploads');
-                process.exit(1);
-            }
-        })
-    }
-});
-
 exports.getImages = function(req, res, next) {
     console.log('empty data:');
 };

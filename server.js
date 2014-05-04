@@ -22,7 +22,7 @@ app.use(bodyParser({
 //app.use(express.json());
 //app.use(express.urlencoded());
 app.use(multer({
-    dest: __dirname + '/uploads',
+    dest: './uploads',
     rename: function (fieldname, filename) {
         return filename.replace(/\W+/g, '-').toLowerCase();
     }
@@ -30,7 +30,7 @@ app.use(multer({
 
 app.use(methodOverride());
 //app.use(app.router);
-app.use(express.static(path.join(__dirname, './uploads')));
+//app.use(express.static(path.join(__dirname, './uploads')));
 
 app.post('/images', main.addImage); // endpoint to post new images
 app.get('/images', main.getImages); // endpoint to get list of images
