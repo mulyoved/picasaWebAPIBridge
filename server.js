@@ -23,6 +23,6 @@ app.use(methodOverride());
 app.post('/images', main.addImage); // endpoint to post new images
 app.get('/images', main.getImages); // endpoint to get list of images
 
-app.listen(3000, function () {
-    console.log('PictureFeed server listening on port 3000');
+var server = app.listen(process.env.PORT || 3000, function () {
+    console.log('PictureFeed server listening on port %d in %s mode', server.address().port, app.settings.env);
 });
