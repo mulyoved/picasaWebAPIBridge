@@ -1,5 +1,6 @@
 var UrbanAirshipPush = require('urban-airship-push');
 
+
 // Your app access configuration. You will find this stuff in your App
 // Settings under App Key, App Secret and App Master Secret.
 var config = {
