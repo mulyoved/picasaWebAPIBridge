@@ -15,6 +15,7 @@ Take Token from: [Google OAuth Playgound](https://developers.google.com/oauthpla
 http://picasawebapibridge.herokuapp.com
 
 http://picasawebapibridge.herokuapp.com/testUpload.html
+http://picasawebapibridge.herokuapp.com/push/
 
 Heroku Commands
 ===============
